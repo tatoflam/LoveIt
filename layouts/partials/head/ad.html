@@ -1,0 +1,6 @@
+{{- if .Site.Params.ad.enable -}}
+    {{- /* Google adsence */ -}}
+    {{- with .Site.Params.ad.adsense.src -}}
+        <script async src= {{.}} crossorigin="anonymous"></script>
+    {{- end -}}
+{{- end -}}
