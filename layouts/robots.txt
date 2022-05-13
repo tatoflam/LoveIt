@@ -62,3 +62,6 @@ User-agent: ZoominfoBot
 Disallow: /
 
 Sitemap: {{ "/sitemap.xml" | absLangURL }}
+
+Allow: /ads.txt
+Disallow: /ads
