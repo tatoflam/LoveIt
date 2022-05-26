@@ -1,6 +1,11 @@
 {{- if .Site.Params.ad.enable -}}
     {{- /* Google adsence */ -}}
-    {{- with .Site.Params.ad.adsense.src -}}
+
+    {{- if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  -}}
+      {{- if not or (eq .Section "categories") (eq .Section "tags") (eq .Section "pages") -}}  
+        {{- with .Site.Params.ad.adsense.src -}}
         <script async src= {{.}} crossorigin="anonymous"></script>
+        {{- end -}}
+      {{- end -}}
     {{- end -}}
 {{- end -}}
