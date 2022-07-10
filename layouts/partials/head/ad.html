@@ -1,5 +1,5 @@
 {{- if .Site.Params.ad.enable -}}
-    {{- /* Google adsence */ -}}
+    {{- /* Google adsense */ -}}
 
     {{- if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  -}}
       {{- if or (eq .Section "categories") (eq .Section "tags") (eq .Section "pages") (eq .Section "about") -}}
