@@ -4,6 +4,10 @@
 
 {{- template "_internal/opengraph.html" . -}}
 {{- template "_internal/twitter_cards.html" . -}}
+<!-- Enable Twitter card -->
+{{ with .Site.Params.twitterCard.Enabled }}
+    {{ partial "plugin/custom_twitter_card.html" $ }}
+{{ end }}
 
 <meta name="application-name" content="{{ .Site.Params.app.title | default .Site.Title }}">
 <meta name="apple-mobile-web-app-title" content="{{ .Site.Params.app.title | default .Site.Title }}">
