@@ -5,7 +5,7 @@
 {{- template "_internal/opengraph.html" . -}}
 {{- template "_internal/twitter_cards.html" . -}}
 <!-- Enable Twitter card -->
-{{ with .Site.Params.twitterCard.Enabled }}
+{{ with .Site.Params.CustomTwitterCard.Enabled }}
     {{ partial "plugin/custom_twitter_card.html" $ }}
 {{ end }}
 
