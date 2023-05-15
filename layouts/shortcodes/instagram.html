@@ -5,6 +5,9 @@
 {{- else -}}
 {{ $id := .Get 0 }}
 {{ $hideCaption := cond (eq (.Get 1) "hidecaption") "1" "0" }}
-{{ with getJSON "https://graph.facebook.com/v10.0/instagram_oembed?url=https://www.instagram.com/p/" $id "/&hidecaption=" $hideCaption "&access_token=165777562030559|5446e30f259cb6104bff44b92bed6a37" }}{{ .html | safeHTML }}{{ end }}
-{{- end -}}
-{{- end -}}
+{{ $dataJSON := (getJSON "https://graph.facebook.com/v10.0/instagram_oembed?url=https://www.instagram.com/p/" $id "/&hidecaption=" $hideCaption "&access_token=165777562030559|5446e30f259cb6104bff44b92bed6a37" ) }}
+{{ if ne $dataJSON nil }}
+{{ .html | safeHTML }}
+{{ end }}
+{{ end }}
+{{ end }}
